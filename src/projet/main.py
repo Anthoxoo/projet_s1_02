@@ -22,7 +22,7 @@ def Premier_V2(n):
 
 import time
 
-n = (10**8 + 7)*2
+n = 200000033
 
 debut = time.perf_counter()
 res1 = Premier_V1(n)
