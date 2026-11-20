@@ -12,7 +12,7 @@ def Premier_V2(n):
     if n < 2:
         return False
     if n == 2:
-        return True    
+        return True
     if n % 2 == 0:
         return False
     for i in range(3, n, 2):
@@ -41,7 +41,7 @@ print(f"Rapport t1 / t2 = {t1 / t2:.2f}")
 #Rapport t1 / t2 = 2.01
 
 
-
+import math
 def Premier_V3(n):
     """Q6 : teste 2, puis les impairs de 3 à racine(n) inclus."""
     if n < 2:
@@ -50,8 +50,7 @@ def Premier_V3(n):
         return True
     if n % 2 == 0:
         return False
-    for d in range(3, isqrt(n) + 1, 2):
+    for d in range(3, math.isqrt(n) + 1, 2):
         if n % d == 0:
             return False
     return True
-
