@@ -7,7 +7,7 @@ def Premier_V1(n):
             return False
     return True
 
-#le même, mais on rajoute 2 opérations supplémentaire O(n)
+#le même, mais on rajoute 2 opérations supplémentaire O (n)
 def Premier_V2(n):
     if n < 2:
         return False
@@ -22,7 +22,7 @@ def Premier_V2(n):
 
 import time
 
-n = 10**8 + 7
+n = (10**8 + 7)*2
 
 debut = time.perf_counter()
 res1 = Premier_V1(n)
@@ -36,3 +36,6 @@ print(f"Premier_V1({n}) = {res1} en {t1:.4f} s")
 print(f"Premier_V2({n}) = {res2} en {t2:.4f} s")
 print(f"Rapport t1 / t2 = {t1 / t2:.2f}")
 
+#Premier_V1(100000007) = True en 1.9327 s
+#Premier_V2(100000007) = True en 0.9597 s
+#Rapport t1 / t2 = 2.01
