@@ -61,15 +61,15 @@ def Premier_V3(n):
     return True
 
 def puissance_mod(a, e, n):
-    """Calcule a**e mod n par carrés successifs (exponentiation rapide)."""
-    resultat = 1
-    a %= n
-    while e > 0:
-        if e & 1:                       # le bit courant de e vaut 1
-            resultat = (resultat * a) % n
-        a = (a * a) % n                 # a^(2^i) mod n
-        e >>= 1
-    return resultat
+  """Calcule a**e mod n par carrés successifs."""
+  resultat = 1
+  a = a % n
+  while e > 0:
+    if e % 2 == 1:  # e est impair
+      resultat = (resultat * a) % n
+    a = (a * a) % n  # carré successif modulo n
+    e = e // 2  # division entière par 2
+  return resultat
 
 
 def Premier_Fermat(n, k, puiss=puissance_mod):
