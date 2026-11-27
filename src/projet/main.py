@@ -90,3 +90,16 @@ def Premier_Fermat(n, k, puiss=puissance_mod):
         if puiss(a, n - 1, n) != 1:
             return False
     return True
+
+def decomposer(n):
+    if n < 5 or n % 2 == 0:
+        raise ValueError("n doit etre >= 5 et impair")
+
+    d = n - 1
+    s = 0
+
+    while d % 2 == 0:
+        d //= 2
+        s += 1
+
+    return (s, d)
