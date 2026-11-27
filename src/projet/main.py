@@ -126,15 +126,23 @@ proportion = faux_positifs / essais
 
 print(f"Faux positifs : {faux_positifs} / {essais}")
 print(f"Proportion : {proportion:.4f} (soit {proportion * 100:.2f} %)")
+
+
+
 def decomposer(n):
     if n < 5 or n % 2 == 0:
         raise ValueError("n doit etre >= 5 et impair")
-
     d = n - 1
     s = 0
-
     while d % 2 == 0:
         d //= 2
         s += 1
 
     return (s, d)
+
+def Premier_Miller_Rabin(n, k):
+    s,d = decomposer(n)
+    for _ in range(k):
+        a = random.randint(2, n - 2)
+        x = puissance_mod(a, d, n)
+        # Finir fonction.
