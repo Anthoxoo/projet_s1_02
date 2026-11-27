@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-=======
 from math import isqrt
 import random
 '''
+
 
 
 >>>>>>> master
@@ -14,12 +13,7 @@ def Premier_V1(n):
             return False
     return True
 
-<<<<<<< HEAD
-
-# le même, mais on rajoute 2 opérations supplémentaire O(n)
-=======
 #le même, mais on rajoute 2 opérations supplémentaire O (n)
->>>>>>> master
 def Premier_V2(n):
     if n < 2:
         return False
@@ -35,11 +29,7 @@ def Premier_V2(n):
 
 import time
 
-<<<<<<< HEAD
-n = (10**8 + 7) * 2
-=======
 n = 200000033
->>>>>>> master
 
 debut = time.perf_counter()
 res1 = Premier_V1(n)
@@ -100,9 +90,3 @@ def Premier_Fermat(n, k, puiss=puissance_mod):
         if puiss(a, n - 1, n) != 1:
             return False
     return True
-
-
-
-
-
->>>>>>> master
