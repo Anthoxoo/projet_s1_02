@@ -60,6 +60,17 @@ def Premier_V3(n):
             return False
     return True
 
+def puissance_mod(a, e, n):
+    """Calcule a**e mod n par carrés successifs (exponentiation rapide)."""
+    resultat = 1
+    a %= n
+    while e > 0:
+        if e & 1:                       # le bit courant de e vaut 1
+            resultat = (resultat * a) % n
+        a = (a * a) % n                 # a^(2^i) mod n
+        e >>= 1
+    return resultat
+
 
 def Premier_Fermat(n, k, puiss=puissance_mod):
     """Q9 : renvoie True si n est probablement premier."""
@@ -74,3 +85,8 @@ def Premier_Fermat(n, k, puiss=puissance_mod):
         if puiss(a, n - 1, n) != 1:
             return False
     return True
+
+
+
+
+
