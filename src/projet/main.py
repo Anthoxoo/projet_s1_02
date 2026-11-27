@@ -1,3 +1,7 @@
+from math import isqrt
+import random
+'''
+
 
 def Premier_V1(n):
     if n < 2:
@@ -40,8 +44,8 @@ print(f"Rapport t1 / t2 = {t1 / t2:.2f}")
 #Premier_V2(100000007) = True en 0.9597 s
 #Rapport t1 / t2 = 2.01
 
+'''
 
-import math
 
 def Premier_V3(n):
     """Q6 : teste 2, puis les impairs de 3 à racine(n) inclus."""
@@ -56,3 +60,17 @@ def Premier_V3(n):
             return False
     return True
 
+
+def Premier_Fermat(n, k, puiss=puissance_mod):
+    """Q9 : renvoie True si n est probablement premier."""
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0:
+        return False
+    for _ in range(k):
+        a = random.randint(2, n - 2)
+        if puiss(a, n - 1, n) != 1:
+            return False
+    return True
